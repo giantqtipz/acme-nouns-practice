@@ -116,7 +116,7 @@ nav a.active {
           const [people, places, things] = await Promise.all(
             urls.map( url => axios.get(url).then( response => response.data))
           );
-          this.setState({ people, places, things });
+          this.setState({ people:people.people, places:places.places, things:things.things });
         }
         render(){
           return (
